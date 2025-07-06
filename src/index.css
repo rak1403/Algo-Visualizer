@@ -1,0 +1,369 @@
+/*──────────────────────────────────────*/
+/* 1. THEME VARIABLES                   */
+/*──────────────────────────────────────*/
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --pane-bg: #f5f5f5;
+  --border-color: #dddddd;
+  --highlight-bg: #def;
+  --mid-bg: #ffc;
+  --found-bg: #afa;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+/*──────────────────────────────────────*/
+/* 2. GLOBAL RESET & STYLING            */
+/*──────────────────────────────────────*/
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+body {
+  display: flex;
+  justify-content: center;
+}
+
+/*──────────────────────────────────────*/
+/* 3. APP CONTAINER                     */
+/*──────────────────────────────────────*/
+.App {
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem;
+  text-align: center;
+}
+
+/*──────────────────────────────────────*/
+/* 4. HEADINGS & TEXT                   */
+/*──────────────────────────────────────*/
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+h2, h3 {
+  margin: 0.75rem 0;
+}
+p {
+  margin: 0.5rem 0;
+}
+
+/*──────────────────────────────────────*/
+/* 5. BUTTONS & CONTROLS                */
+/*──────────────────────────────────────*/
+button {
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--pane-bg);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+button:hover {
+  border-color: var(--highlight-bg);
+}
+.controls {
+  margin: 1rem 0;
+}
+
+/*──────────────────────────────────────*/
+/* 6. ALGORITHM SELECTOR & FORM         */
+/*──────────────────────────────────────*/
+.algorithm-selector {
+  margin: 1.5rem 0;
+}
+.algorithm-selector select {
+  padding: 0.4rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--pane-bg);
+  color: var(--text-color);
+}
+
+.input-form {
+  margin: 1rem auto;
+  max-width: 500px;
+  text-align: left;
+}
+.input-form label {
+  display: block;
+  margin-top: 1rem;
+}
+.input-form input,
+.input-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--pane-bg);
+  color: var(--text-color);
+}
+
+/*──────────────────────────────────────*/
+/* 7. VISUALIZER LAYOUT                */
+/*──────────────────────────────────────*/
+.visualizer-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.animation-pane {
+  flex: 1;
+  min-width: 280px;
+}
+
+/*──────────────────────────────────────*/
+/* 8. CODE DISPLAY                      */
+/*──────────────────────────────────────*/
+.code-pane {
+  background: var(--pane-bg);
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  text-align: left;
+  overflow-x: auto;
+  max-width: 960px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.code-block {
+  background: var(--pane-bg);
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+.code-header {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: left;
+}
+
+/*──────────────────────────────────────*/
+/* 9. ARRAY VISUALIZER                  */
+/*──────────────────────────────────────*/
+.array-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.array-box {
+  width: 40px;
+  height: 40px;
+  margin: 0 4px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--bg-color);
+  transition: background 0.3s;
+}
+.array-box.current-window { background: var(--highlight-bg); }
+.array-box.mid            { background: var(--mid-bg); }
+.array-box.found          { background: var(--found-bg); }
+
+/*──────────────────────────────────────*/
+/* 10. GRAPH TRAVERSAL VISUALIZER        */
+/*──────────────────────────────────────*/
+.node-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 1rem 0;
+}
+.node-box {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  background: var(--bg-color);
+  transition: background 0.3s;
+}
+.node-box.visited {
+  background: var(--found-bg);
+}
+
+/*──────────────────────────────────────*/
+/* 11. DFS RECURSION TREE VISUALIZER    */
+/*──────────────────────────────────────*/
+.dfs-recursion-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tree-view {
+  width: 100%;               /* Full width */
+  overflow-x: auto;          /* Allow horizontal scroll if needed */
+  display: flex;
+  justify-content: center;   /* Center the SVG */
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.tree-view svg {
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.stack-view {
+  max-width: 33%;
+  min-width: 300px;
+  background: var(--pane-bg);
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: auto;
+}
+
+.tree-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+}
+.tree-children {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+.tree-node .node-box.current {
+  background: var(--mid-bg);
+  border-color: var(--highlight-bg);
+}
+
+/*──────────────────────────────────────*/
+/* 12. CALL-STACK ANIMATION             */
+/*──────────────────────────────────────*/
+.call-stack-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+.stack-node-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stack-connector {
+  width: 2px;
+  height: 20px;
+  background: var(--border-color);
+  margin: 2px 0;
+}
+.stack-node {
+  transition: transform 0.3s, opacity 0.3s;
+}
+.stack-node.push {
+  animation: pushIn 0.3s ease-in-out;
+  background-color: #8fd;
+}
+.stack-node.pop {
+  animation: popOut 0.3s ease-in-out;
+  background-color: #f88;
+}
+@keyframes pushIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+@keyframes popOut {
+  from { transform: scale(1); opacity: 1; }
+  to   { transform: scale(0.8); opacity: 0.4; }
+}
+
+/*──────────────────────────────────────*/
+/* 13. UTILITY & LINKS                  */
+/*──────────────────────────────────────*/
+a {
+  color: #646cff;
+  font-weight: 500;
+  text-decoration: none;
+}
+a:hover {
+  color: #535bf2;
+}
+
+/*──────── Recursion Tree SVG Styling ────────*/
+.tree-link {
+  fill: none;
+  stroke: #444;              /* Darker base color */
+  stroke-width: 3px;         /* Thicker line */
+  transition: stroke 0.3s, stroke-width 0.3s;
+}
+
+.tree-link.active {
+  stroke: cyan;              /* Even darker when active */
+  stroke-width: 4px;         /* Extra bold for active step */
+}
+
+.tree-node-circle {
+  fill: var(--pane-bg);
+  stroke: var(--border-color);
+  stroke-width: 2px;
+  transition: fill 0.3s, r 0.3s;
+}
+.tree-node-circle.current {
+  fill: var(--mid-bg);
+  stroke: var(--highlight-bg);
+  r: 20px;
+}
+.tree-node-circle.visited {
+  fill: var(--found-bg);
+}
+
+/*───────── Visualizer Layout ─────────*/
+.visualizer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.visualizer-top {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  overflow-x: auto;
+  align-items: flex-start;
+}
+
+.visualizer-bottom {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 0 0 0;
+  border-top: 2px solid var(--accent-color, #ccc);
+  text-align: left;
+}

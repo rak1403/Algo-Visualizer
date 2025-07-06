@@ -1,0 +1,151 @@
+/* Layout container for entire visualizer */
+.visualizer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+
+/* Top part: Recursion Tree + Call Stack */
+.visualizer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Bottom part: Code block */
+.visualizer-bottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem 0 2rem 0;
+  border-top: 2px solid var(--border-color);
+  width: 100%;
+}
+
+/* Code pane layout */
+.code-pane {
+  width: 100%;
+  max-width: 800px;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+  background: var(--pane-bg);
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+}
+
+/* Code header */
+.code-header {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--text-color);
+}
+
+/* Main visualizer layout container */
+.visualizer-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.animation-pane {
+  flex: 1;
+}
+
+/* Call Stack Styling */
+.call-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1rem;
+}
+
+.call-stack .node-box {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 8px;
+  background: var(--pane-bg);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  transition: background 0.3s;
+}
+
+.call-stack .node-box.visited {
+  background: var(--found-bg);
+}
+
+/* Current node highlighting */
+.current-node {
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.current-node.traversing {
+  color: #90ee90;
+}
+
+.current-node.backtrack {
+  color: orange;
+}
+
+.code-info-banner {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  text-align: left;
+}
+
+.code-info-header {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.visualizer-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: var(--pane-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.main-title {
+  margin-bottom: 1rem;
+}
+
+.overview-pane {
+  background: var(--mid-bg);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+  text-align: left;
+}
+
+.overview-pane ul {
+  margin: 0.5rem 0 0 1.2rem;
+  text-align: left;
+}
+
+.section {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.section h2 {
+  margin-bottom: 0.5rem;
+}
