@@ -5,9 +5,12 @@ An interactive and educational web app that **visually demonstrates how algorith
 ---
 
 ## 🚀 Demo
+![Screenshot 2025-07-06 123438](https://github.com/user-attachments/assets/8658180a-34d2-43c2-aca6-495f5fcea694)
 
-[🔗 Live Demo](https://your-demo-link.netlify.app)  
-*(Replace with your actual deployment link if hosted)*
+
+![Screenshot 2025-07-06 123457](https://github.com/user-attachments/assets/c23f4053-30cd-4fb4-ae8c-510639a6b75a)
+
+
 
 ---
 
@@ -50,5 +53,8 @@ An interactive and educational web app that **visually demonstrates how algorith
 
 ---
 
-## 🗂️ Project Structure
+## 🗂️ Installation
+git clone https://github.com/rak1403/Algo-Visualizer.git npm install npm start
+
+
 
