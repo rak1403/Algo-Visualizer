@@ -4,7 +4,7 @@ import { getDFSTreeSteps, buildDFSTree } from '../../utils/algorithms';
 
 export default function DFSRecursionVisualizer({ adjList, part }) {
   const steps = getDFSTreeSteps(adjList);
-  const step = steps[0]; // fallback for initial state
+  const step = steps[0]; 
 
   const [stepIndex, setStepIndex] = useState(0);
   const [playing, setPlaying] = useState(true);
@@ -19,7 +19,6 @@ export default function DFSRecursionVisualizer({ adjList, part }) {
 
   const currentStep = steps[stepIndex];
 
-  // ─────────────── RECURSION TREE ────────────────
   if (part === 'tree') {
     const forest = buildDFSTree(adjList);
     const layout = d3Tree().nodeSize([80, 100]);
@@ -106,7 +105,6 @@ export default function DFSRecursionVisualizer({ adjList, part }) {
     );
   }
 
-  // ─────────────── STACK VIEW ────────────────
   if (part === 'stack') {
     return (
       <div className="stack-view">

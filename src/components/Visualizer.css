@@ -1,4 +1,4 @@
-/* Layout container for entire visualizer */
+
 .visualizer-wrapper {
   display: flex;
   flex-direction: column;
@@ -7,7 +7,6 @@
   margin-top: 1rem;
 }
 
-/* Top part: Recursion Tree + Call Stack */
 .visualizer-top {
   display: flex;
   justify-content: space-between;
@@ -16,7 +15,6 @@
   width: 100%;
 }
 
-/* Bottom part: Code block */
 .visualizer-bottom {
   display: flex;
   justify-content: flex-start;
@@ -26,7 +24,6 @@
   width: 100%;
 }
 
-/* Code pane layout */
 .code-pane {
   width: 100%;
   max-width: 800px;
@@ -40,7 +37,6 @@
   overflow-x: auto;
 }
 
-/* Code header */
 .code-header {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
@@ -49,7 +45,6 @@
   color: var(--text-color);
 }
 
-/* Main visualizer layout container */
 .visualizer-container {
   display: flex;
   gap: 2rem;
@@ -61,7 +56,6 @@
   flex: 1;
 }
 
-/* Call Stack Styling */
 .call-stack {
   display: flex;
   flex-direction: column;
@@ -86,7 +80,6 @@
   background: var(--found-bg);
 }
 
-/* Current node highlighting */
 .current-node {
   font-weight: bold;
   padding: 6px 12px;

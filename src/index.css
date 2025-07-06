@@ -1,6 +1,4 @@
-/*──────────────────────────────────────*/
-/* 1. THEME VARIABLES                   */
-/*──────────────────────────────────────*/
+
 :root {
   --bg-color: #ffffff;
   --text-color: #222222;
@@ -18,10 +16,6 @@
 }
 
 
-
-/*──────────────────────────────────────*/
-/* 2. GLOBAL RESET & STYLING            */
-/*──────────────────────────────────────*/
 html, body, #root {
   margin: 0;
   padding: 0;
@@ -34,9 +28,6 @@ body {
   justify-content: center;
 }
 
-/*──────────────────────────────────────*/
-/* 3. APP CONTAINER                     */
-/*──────────────────────────────────────*/
 .App {
   max-width: 900px;
   width: 100%;
@@ -44,9 +35,6 @@ body {
   text-align: center;
 }
 
-/*──────────────────────────────────────*/
-/* 4. HEADINGS & TEXT                   */
-/*──────────────────────────────────────*/
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -58,9 +46,6 @@ p {
   margin: 0.5rem 0;
 }
 
-/*──────────────────────────────────────*/
-/* 5. BUTTONS & CONTROLS                */
-/*──────────────────────────────────────*/
 button {
   border-radius: 6px;
   border: 1px solid var(--border-color);
@@ -78,9 +63,6 @@ button:hover {
   margin: 1rem 0;
 }
 
-/*──────────────────────────────────────*/
-/* 6. ALGORITHM SELECTOR & FORM         */
-/*──────────────────────────────────────*/
 .algorithm-selector {
   margin: 1.5rem 0;
 }
@@ -113,9 +95,6 @@ button:hover {
   color: var(--text-color);
 }
 
-/*──────────────────────────────────────*/
-/* 7. VISUALIZER LAYOUT                */
-/*──────────────────────────────────────*/
 .visualizer-container {
   display: flex;
   gap: 2rem;
@@ -127,9 +106,6 @@ button:hover {
   min-width: 280px;
 }
 
-/*──────────────────────────────────────*/
-/* 8. CODE DISPLAY                      */
-/*──────────────────────────────────────*/
 .code-pane {
   background: var(--pane-bg);
   padding: 1rem;
@@ -162,9 +138,6 @@ button:hover {
   text-align: left;
 }
 
-/*──────────────────────────────────────*/
-/* 9. ARRAY VISUALIZER                  */
-/*──────────────────────────────────────*/
 .array-container {
   display: flex;
   justify-content: center;
@@ -185,9 +158,6 @@ button:hover {
 .array-box.mid            { background: var(--mid-bg); }
 .array-box.found          { background: var(--found-bg); }
 
-/*──────────────────────────────────────*/
-/* 10. GRAPH TRAVERSAL VISUALIZER        */
-/*──────────────────────────────────────*/
 .node-container {
   display: flex;
   justify-content: center;
@@ -208,9 +178,6 @@ button:hover {
   background: var(--found-bg);
 }
 
-/*──────────────────────────────────────*/
-/* 11. DFS RECURSION TREE VISUALIZER    */
-/*──────────────────────────────────────*/
 .dfs-recursion-container {
   display: flex;
   flex-direction: row;
@@ -222,10 +189,10 @@ button:hover {
 }
 
 .tree-view {
-  width: 100%;               /* Full width */
-  overflow-x: auto;          /* Allow horizontal scroll if needed */
+  width: 100%;              
+  overflow-x: auto;         
   display: flex;
-  justify-content: center;   /* Center the SVG */
+  justify-content: center;  
   align-items: flex-start;
   margin-bottom: 2rem;
 }
@@ -263,9 +230,6 @@ button:hover {
   border-color: var(--highlight-bg);
 }
 
-/*──────────────────────────────────────*/
-/* 12. CALL-STACK ANIMATION             */
-/*──────────────────────────────────────*/
 .call-stack-container {
   display: flex;
   flex-direction: column;
@@ -303,9 +267,6 @@ button:hover {
   to   { transform: scale(0.8); opacity: 0.4; }
 }
 
-/*──────────────────────────────────────*/
-/* 13. UTILITY & LINKS                  */
-/*──────────────────────────────────────*/
 a {
   color: #646cff;
   font-weight: 500;
@@ -315,17 +276,16 @@ a:hover {
   color: #535bf2;
 }
 
-/*──────── Recursion Tree SVG Styling ────────*/
 .tree-link {
   fill: none;
-  stroke: #444;              /* Darker base color */
-  stroke-width: 3px;         /* Thicker line */
+  stroke: #444;              
+  stroke-width: 3px;        
   transition: stroke 0.3s, stroke-width 0.3s;
 }
 
 .tree-link.active {
-  stroke: cyan;              /* Even darker when active */
-  stroke-width: 4px;         /* Extra bold for active step */
+  stroke: cyan;              
+  stroke-width: 4px;        
 }
 
 .tree-node-circle {
@@ -343,7 +303,6 @@ a:hover {
   fill: var(--found-bg);
 }
 
-/*───────── Visualizer Layout ─────────*/
 .visualizer-wrapper {
   display: flex;
   flex-direction: column;

@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 
 export default function InputForm({ algorithm, onSubmit }) {
-    // We’ll store whatever the user types here:
+
     const [textInput, setTextInput] = useState('');
     const [target, setTarget] = useState('');
 
 
-    // When the form is submitted, pass the raw input back to the parent:
-    // src/components/InputForm.jsx
     const handleSubmit = e => {
         e.preventDefault();
 
@@ -17,7 +15,7 @@ export default function InputForm({ algorithm, onSubmit }) {
                 target: target.trim()
             });
         } else {
-            onSubmit(textInput.trim());  // <-- a plain string for BFS/DFS
+            onSubmit(textInput.trim());  
         }
     };
 

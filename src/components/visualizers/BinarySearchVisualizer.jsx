@@ -1,32 +1,23 @@
-// src/components/visualizers/BinarySearchVisualizer.jsx
 
 import React, { useState, useEffect } from 'react';
 import { getBinarySearchSteps } from '../../utils/algorithms';
 
 export default function BinarySearchVisualizer({ array, target }) {
-  // Compute the sequence of steps based on the user’s array & target
   const steps = getBinarySearchSteps(array, target);
 
-  // ────────────────────────────────
-  // 1. Component state
-  // ────────────────────────────────
   const [stepIndex, setStepIndex] = useState(0);
   const [playing, setPlaying]     = useState(true);
 
-  // ────────────────────────────────
-  // 2. Advance animation on a timer
-  // ────────────────────────────────
   useEffect(() => {
-    if (!playing) return; // paused
+    if (!playing) return; 
     if (stepIndex < steps.length - 1) {
       const timer = setTimeout(() => {
         setStepIndex(i => i + 1);
-      }, 800); // 800ms per step
+      }, 800); 
       return () => clearTimeout(timer);
     }
   }, [playing, stepIndex, steps.length]);
 
-  // Current step data
   const { low, mid, high, foundIndex } = steps[stepIndex];
 
   return (
@@ -52,7 +43,6 @@ export default function BinarySearchVisualizer({ array, target }) {
       {/* Array Rendering & Highlighting */}
       <div className="array-container">
         {array.map((num, idx) => {
-          // Build class names based on state
           const classes =
             'array-box ' +
             (idx >= low && idx <= high ? 'current-window ' : '') +

@@ -19,7 +19,6 @@ export default function BFSRecursionVisualizer({ adjList, part }) {
 
   const currentStep = steps[stepIndex];
 
-  // ─────────────── BFS TREE ────────────────
   if (part === 'tree') {
     const forest = buildBFSTree(adjList);
     const layout = d3Tree().nodeSize([80, 100]);
@@ -106,7 +105,6 @@ export default function BFSRecursionVisualizer({ adjList, part }) {
     );
   }
 
-  // ─────────────── BFS QUEUE VIEW ────────────────
   if (part === 'stack') {
     return (
       <div className="stack-view">

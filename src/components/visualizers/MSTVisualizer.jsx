@@ -1,4 +1,3 @@
-// src/components/visualizers/MSTVisualizer.jsx
 
 import React, { useState, useEffect } from 'react';
 import {

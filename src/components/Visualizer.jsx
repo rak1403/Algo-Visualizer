@@ -1,4 +1,3 @@
-// src/components/Visualizer.jsx
 
 import React from 'react';
 import {

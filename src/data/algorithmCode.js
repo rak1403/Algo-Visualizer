@@ -1,4 +1,3 @@
-// src/data/algorithmCode.js
 
 export const algorithmCode = {
   'binary-search': `\
