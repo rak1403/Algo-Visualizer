@@ -1,4 +1,4 @@
-// Binary Search Animation Steps
+
 export function getBinarySearchSteps(arr, target) {
   const steps = [];
   let low = 0;
@@ -27,7 +27,6 @@ export function getBinarySearchSteps(arr, target) {
   return steps;
 }
 
-// Breadth-First Search (BFS) Animation Steps
 export function getBFSSteps(adj, start = 0) {
   const steps = [];
   const visited = new Set();
@@ -47,10 +46,8 @@ export function getBFSSteps(adj, start = 0) {
   return steps;
 }
 
-// … existing code above …
 
 
-// NEW — BFS Tree Steps (animation)
 export function getBFSTreeSteps(adjList) {
   const visited = new Set();
   const steps = [];
@@ -86,7 +83,6 @@ export function getBFSTreeSteps(adjList) {
   return steps;
 }
 
-// NEW — Build BFS Forest (for layout)
 export function buildBFSTree(adjList) {
   const visited = new Set();
   const forest = [];
@@ -110,7 +106,6 @@ export function buildBFSTree(adjList) {
         }
       }
 
-      // Convert flat parent-child into tree structure
       const nodes = { [root]: { value: root, children: [] } };
       children.forEach(({ parent, value }) => {
         nodes[value] = { value, children: [] };
@@ -124,7 +119,6 @@ export function buildBFSTree(adjList) {
 }
 
 
-// Depth-First Search (DFS) — Simple visited set animation
 export function getDFSSteps(adj, start = 0) {
   const steps = [];
   const visited = new Set();
@@ -142,7 +136,6 @@ export function getDFSSteps(adj, start = 0) {
   return steps;
 }
 
-// ✅ DFS Recursion Tree — Steps with full forest traversal
 export function getDFSTreeSteps(adjList) {
   const visited = new Set();
   const steps = [];
@@ -185,7 +178,6 @@ export function getDFSTreeSteps(adjList) {
   return steps;
 }
 
-// ✅ Build DFS Recursion Forest (multiple trees if disconnected)
 export function buildDFSTree(adjList) {
   const visited = new Set();
   const forest = [];
